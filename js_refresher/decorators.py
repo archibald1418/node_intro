@@ -7,7 +7,11 @@ def decorator(function):
 def hello():
     return 'hello'
 
-upper_hello = decorator(hello)
+if __name__ == '__main__':
+    upper_hello = decorator(hello)
+    print("Simple hello: ", hello())
+    print("Mega hello: ", upper_hello())
+
 
 
 

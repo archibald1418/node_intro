@@ -7,3 +7,6 @@ def closure():
         return f'{counter} {sheep}'
     print("Initialize counter: 0")
     return inner
+
+if __name__ == '__main__':
+    closure()

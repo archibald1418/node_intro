@@ -1,3 +1,10 @@
+/*
+
+------    SURVIVAL GUIDE TO JAVASCRIPT ------
+
+*/
+
+
 console.log("play");
 
 //  -------------- JS SURVIVAL GUIDE ------------
