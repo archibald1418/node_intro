@@ -64,6 +64,8 @@ interface Person {
     // Optional fields
     [key: string]: any;
     [key: number]: any // key can be fast:true or 23:true
+
+    new(first, last): Person
 }
 
 // also possible with 'type' kw, but 'interface' is more legible
@@ -86,5 +88,24 @@ function void_func(): void{
 
 
 
+// Arrays
+
+const arrUntyped = []
+const arrNum: number[] = []
+arrNum.push(1);
+arrNum.push(1);
+arrNum.push('1'); // error
+
+const arrPerson: Person[] = []
+arrPerson.push(new person2('Vassa', 'Zheleznova'))
+
+// TS HAS TUPLES!!!
+type MyList = [number, string, boolean] // typed tuple!
+const arr: MyList = [1, '1', true]
+
+type OptionalTuple = [number?, string?, boolean?]
+    // this could have either all three or be empty
+const tuple1: OptionalTuple = []
+const tuple2: OptionalTuple = [1, '1', false]
 
 
