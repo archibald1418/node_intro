@@ -21,7 +21,7 @@ async function hello(){
 
 // implicit typing
 let lucky = 23; // type will be inferred
-lucky = '23'; // while vanilla don't mind, tsc will find a type error
+// lucky = '23'; // while vanilla don't mind, tsc will find a type error
 
 let opt_out: any = 23; // 'any' annotation lets you "opt out" from type checking
 opt_out = '23' // resulting in no errors
@@ -32,7 +32,7 @@ untyped = 23
 
 let num_typed: number; // explicit typing
 num_typed = 23
-num_typed = '23' // checks the types resulting in error
+// num_typed = '23' // checks the types resulting in error
 
 // if you have implicit type, don't bother explicitly typing it
 // let num = 23 is just fine
@@ -43,7 +43,7 @@ num_typed = '23' // checks the types resulting in error
 
 type Style = 'bold' | 'italic' | 23; // | introduces a Union
 let style1: Style = 23
-let style2: Style = 24
+// let style2: Style = 24
 
 const person = {
     first: 'Oleg',
@@ -53,7 +53,8 @@ const person = {
 const person2: Person = {
     first: 'Usain',
     last: 'Bolt', // trailing comma is very convenient hehe
-    fast: true,
+    fast: true
+
 }
 
 // interface - enforces a shape of an object
@@ -64,8 +65,6 @@ interface Person {
     // Optional fields
     [key: string]: any;
     [key: number]: any // key can be fast:true or 23:true
-
-    new(first, last): Person
 }
 
 // also possible with 'type' kw, but 'interface' is more legible
@@ -94,10 +93,10 @@ const arrUntyped = []
 const arrNum: number[] = []
 arrNum.push(1);
 arrNum.push(1);
-arrNum.push('1'); // error
+// arrNum.push('1'); // error
 
 const arrPerson: Person[] = []
-arrPerson.push(new person2('Vassa', 'Zheleznova'))
+arrPerson.push(person2)
 
 // TS HAS TUPLES!!!
 type MyList = [number, string, boolean] // typed tuple!
@@ -122,4 +121,44 @@ let y: Observable<Person>
 let z = new Observable(23)
 
 
+// OOP vs FP in TS
+
+// FP - PRINCIPLES OF FP
+
+// 1. Pure functions
+
+let num = 123;
+
+function toString(val){
+    // num = val // side-effect
+    return val.toString()
+}
+
+const str = toString(num)
+console.log(typeof str)
+
+// 2.  Immutable Data
+    // Functional code is stateless
+
+const data = Object.freeze([1,2,3,4,5,6])
+
+// 3. Functions as Arguments ('first class citizen' functions)
+
+const addEmoji = (val) => toString(val) + '😇'  ;
+const emojiData = data.map(addEmoji)
+console.log(emojiData)
+
+// Functions as return value
+const appendEmoji = (fixed) => (dynamic) => fixed + dynamic
+
+const rain = appendEmoji('🌩')
+const sun = appendEmoji('🌞')
+console.log(rain('today'))
+console.log(sun('tomorrow'))
+
+
+
+
+const Sun = new Emoji('🌞');
+console.log(Sun.icon);
 
