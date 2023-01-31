@@ -1,3 +1,5 @@
+// import * as _ from 'lodash' 
+
 console.log('hello world')
 // Typescript compiler 'tsc' transpiles into vanilla JS
 
