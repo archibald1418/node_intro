@@ -36,3 +36,55 @@ num_typed = '23' // checks the types resulting in error
 
 // if you have implicit type, don't bother explicitly typing it
 // let num = 23 is just fine
+
+
+
+// ............. creating a custom type ...............
+
+type Style = 'bold' | 'italic' | 23; // | introduces a Union
+let style1: Style = 23
+let style2: Style = 24
+
+const person = {
+    first: 'Oleg',
+    last: 'Valiulin',
+}
+
+const person2: Person = {
+    first: 'Usain',
+    last: 'Bolt', // trailing comma is very convenient hehe
+    fast: true,
+}
+
+// interface - enforces a shape of an object
+interface Person {
+    first: string;
+    last: string;
+    
+    // Optional fields
+    [key: string]: any;
+    [key: number]: any // key can be fast:true or 23:true
+}
+
+// also possible with 'type' kw, but 'interface' is more legible
+type Human = {
+    name: string;
+    surname: string;
+    [key: string]: any;
+}
+
+
+// ........... type annotations for functions ............
+
+function pow(x: number, y: number): string{
+    return Math.pow(x, y).toString()
+}
+
+function void_func(): void{
+    console.log("void function")
+}
+
+
+
+
+
