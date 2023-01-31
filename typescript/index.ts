@@ -109,3 +109,17 @@ const tuple1: OptionalTuple = []
 const tuple2: OptionalTuple = [1, '1', false]
 
 
+
+// GENERICS!
+
+class Observable<T>{
+    // just a class with a variable you can observe
+    constructor(public value: T){}
+}
+
+let x: Observable<number>
+let y: Observable<Person>
+let z = new Observable(23)
+
+
+
