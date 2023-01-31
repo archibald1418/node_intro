@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "target": "ESNext", // flavour of JS
+        "watch": true, // recompiles if index.ts is changed
+        "lib": [
+            // includes typing from these namespaces
+            "DOM",
+            "ES2017"
+        ]
+    }
+}
