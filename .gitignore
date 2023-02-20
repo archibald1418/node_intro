@@ -1,2 +1,3 @@
 typescript/*.js
 **/node_modules/**
+**/package*.json
