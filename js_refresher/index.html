@@ -1,3 +1,9 @@
+
+<span></span>
+<div></div>
+<a href=""></a>
+
+
 <html>
     <head>
         <script defer src="./index.js"></script>
@@ -8,6 +14,107 @@
         <p>
             LOL
         </p>
+
+        <span class="purple"></span>
+        <span class="id"></span>
+        
+
+
+
+        <!-- NOTE: EMMET (extension) abreviations: -->
+
+        <!-- .class / #id --> 
+        <div class="class"></div>
+        <div class="id"></div>
+
+        <!-- header>nav>ul>lol -->
+        <header>
+            <nav>
+                <ul>
+                    <lol></lol>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- header>nav>ul*3{text} -->
+        <header>
+            <nav>
+                <li>text</li>
+                <li>text</li>
+                <li>text</li>
+            </nav>
+        </header>
+
+        <!-- header>nav>ul*3.class-${List Item $} -->
+        <header>
+            <nav>
+                <ul class="class-1">List Item 001</ul>
+                <ul class="class-2">List Item 002</ul>
+                <ul class="class-3">List Item 003</ul>
+            </nav>
+        </header>
+        
+        <!-- siblings -->
+        <!-- header>nav+main+footer -->
+        <header>
+            <nav></nav>
+            <main></main>
+            <footer></footer>
+        </header>
+        <!-- header>nav^main+footer --> 
+        <!-- ^ - 'climb-up operator', goes 1lvl up the tree -->
+        <header>
+            <nav></nav>
+        </header>
+        <main></main>
+        <footer></footer>
+        <!-- or use parenthesis - grouping -->
+        <!-- (header>nav)+main+footer -->
+        <header>
+            <nav></nav>
+        </header>
+        <main></main>
+        <footer></footer>
+
+        <!-- misc -->
+        
+        <header>
+            <nav>
+                <h2>Heading</h2>
+                <nav>navbar</nav>
+                <ol>
+                    <li><a href="link one">Link 1</a></li>
+                    <li><a href="link two">Link 2</a></li>
+                    <li><a href="link three">Link 3</a></li>
+                    <li><a href="link four">Link 4</a></li>
+                    <li><a href="link five">Link 5</a></li>
+                </ol>
+            </nav>
+        </header>
+        <main></main>   
+        <footer></footer>
+
+        <!-- forms -->
+        <!-- form:post -->
+        <form action="write msg" method="post"></form>
+
+        <!--  --> 
+        <form action="" method="post">
+            <group class="input:text"></group>
+        </form>  
+
+        <!-- css -->
+        <style>
+            .class {
+                /* position: relative,
+                bgc: ...
+                w10 */
+                position: relative;
+                background-color: #fff; 
+                width: 10px;
+
+            }
+        </style>
         
     </body>
 </html>
