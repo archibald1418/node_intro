@@ -42,18 +42,26 @@ t
 // ............. truthy - falsy types .............
 
 var truthy;
+console.log(truthy);
 
 if(truthy){
     // do this 
-} else if (truthy == null){
+    console.log("yeah yeah");
+} else if (truthy == null){ // undef is comparable to null
+    console.log("yeah no");
     // do this
 } else {
     // do that
+    console.log("nah");
 }
 
 console.log(true)
 console.log(! {})
 // checking for truthiness - double !! should return true
+    var isTruthy = (arg) => (!! arg);
+
+console.log(isTruthy(true));
+
 console.log(!! {})
 console.log({})
 console.log(!! {})
@@ -158,7 +166,7 @@ if (true)
 {
     // block starts...
     let x = 23; // <- has local scope
-    // var x = 23; NOTE: DON'T DECLARE VAR IN SCOPES!!!!
+    // var x = 23; NOTE: DON'T DECLARE VAR IN SCOPES!!!! - hard to track
 
     const c  = 89;
     // c = 90; consts cannot be reassigned
@@ -225,6 +233,7 @@ console.log(fun());
 console.log(fun());
 console.log(fun());
 console.log(fun());
+console.log(fun());
 // count is ac
 // NOTE: closures in python are written in a closure.py
 
@@ -254,7 +263,7 @@ const obj2 = {
     hello2: () => {console.log(this)}
     // NOTE: in arrow function attributes 'this' bypasses the object and refers to 'global object'!!
         /*
-            Global object - an object which is defined for global scope.
+            '{}' Global object - an object which is defined for global scope.
             All the context variables in global scope are attributes of Global Object
             NOTE: in vanilla, GO is Window.
                 In Node.js GO is not defined.... In Node GOs are modules (like in Python)
@@ -280,7 +289,7 @@ function hello(){
     return this.face;
 }
 
-const result = hello.call(ghost)
+const result = hello.call(ghost) // 'parametrized this'
 // .call creates another function, but wrapped in context
 
 console.log(result)

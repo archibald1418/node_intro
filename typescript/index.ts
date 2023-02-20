@@ -1,5 +1,4 @@
 import * as _ from 'lodash'
-    // lodash library has community supported
     // npm i -D @types/lodash - loads types for certain libraries
     // npm has a monorepo @types with community supported types
 
@@ -8,8 +7,16 @@ console.log('hello world')
 
 
 async function hello(){
-    return 'world'
+    return 'hello'
 }
+
+async function world(){
+    return ' world'
+}
+
+// console.log(hello().then.call)); 
+
+
 // by default tsc is EcmaScript 3..., doesn't have support for async await
 // will add extra crazy code to replicate async 
 
