@@ -99,7 +99,7 @@ const Person = function(name){
         /**
          * ... - 'spread' operator
          * 
-         * here it chains Object.assign method
+         * here it chains 'Object.assign' calls
          * to create object with fields named exactly
          * like the functor arguments were named
          */

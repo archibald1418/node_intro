@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "ESNext", // flavour of JS
+        "target": "ES5", // flavour of JS
         "watch": true, // recompiles if index.ts is changed
         "lib": [
             // includes typing from these namespaces
